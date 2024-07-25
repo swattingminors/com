@@ -1,0 +1,135 @@
+<!DOCTYPE html><html><head>
+    <title>@attacksent</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-control" content="public">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="css/Depts.css" rel="stylesheet" type="text/css">
+    <script src="disable-click.html"></script>
+    <script src="js/disable-inspect.js"></script>
+    <script src="js/snowstorm.js"></script>
+
+    <!-- Music -->
+    <script>
+        function removeOverlay() {
+            var overlay = document.getElementById("overlay");
+            overlay.style.display = "none";
+        }
+
+        function handleClick() {
+            const nameElements = document.querySelectorAll('.clickmessage');
+            nameElements.forEach(function(element) {
+                element.style.display = 'none';
+            });
+
+            const audioUrls = [
+                "https://files.offshore.cat/zLcM4mMJ.mp3"
+            ];
+
+            const rndAudio = Math.floor(Math.random() * audioUrls.length);
+
+            const audioItem = new Audio(audioUrls[rndAudio]);
+            audioItem.volume = 0.1;
+            audioItem.loop = true;
+            audioItem.play();
+
+            document.removeEventListener("click", handleClick);
+        }
+
+        document.addEventListener("click", handleClick);
+    </script>
+
+    <style>
+        body {
+            background-image: url('images/wallpaper.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+        }
+
+        .sparkle {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            color: white;
+            z-index: 1;
+        }
+
+        .sparkle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background: url('images/sparkle.gif') center center no-repeat;
+            background-size: cover;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        @keyframes sparkle {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+        }
+
+        .header {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: -350px auto 10px auto; /* Center the image and add spacing below */
+            position: relative;
+            left: 5px; /* Adjust this value to move the image to the right */
+        }
+
+        .typewriter {
+            margin-top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <!-- click to enter -->
+    <div id="overlay" onclick="removeOverlay()">
+        <div class="sparkle"><a>Click to enter</a></div>
+    </div>
+
+    <!-- Profile Image -->
+    <img class="profile-img" src="images/pfpdep.jpg">
+
+    <h1 class="header">
+        <a href="discord://-/users/1191926515722633257" style="text-decoration: none;" target="_BLANK">
+            <span class="sparkle">attacksent</span>
+        </a>
+    </h1>
+
+    <!--Type writer bio-->
+    <div class="typewriter" id="typewriter"></div>
+    <script data-cfasync="false" src="js/email-decode.min.js"></script>
+    <script src="js/typewriter.js"></script>
+    <script>
+        var typewriter = new Typewriter(document.getElementById('typewriter'), {
+            strings: ['Number 1 Developer'],
+            delay: 'natural',
+            cursor: '|',
+            autoStart: true,
+            loop: true
+        });
+    </script>
+
+</body></html>
